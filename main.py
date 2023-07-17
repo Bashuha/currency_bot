@@ -9,7 +9,7 @@ browser = webdriver.Chrome()
 
 browser.get('https://www.banki.ru/products/currency/cb/')
 
-TOKEN = "5729962240:AAGFgK9eu5YQ8uR6JpN6Uh708J_IVOgao0g"
+TOKEN = ''
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -58,7 +58,7 @@ def test_value(message):
             ]
 
     currency_dict = dict(zip(values, numbers))
-    
+
     field_to_fill = '/html/body/div[1]/div[1]/aside/div/section[1]/div[2]/div[1]/div/input[1]'
     select_currency_list = '/html/body/div[1]/div[1]/aside/div/section[1]/div[2]/div[1]/div/div[1]'
     select_currency = '/html/body/div[1]/div[1]/aside/div/section[1]/div[2]/div[1]/div/div[2]/div/div/div[4]/div[1]/div/div[31]'
@@ -74,45 +74,5 @@ def test_value(message):
     browser.quit()
 
 
-numbers = [i for i in range(2, 36)]
-
-values = [
-    'AUD',
-    'AZN',
-    'AMD',
-    'THB',
-    'BYN',
-    'BGN',
-    'BRL',
-    'HUF',
-    'KRW',
-    'HKD',
-    'DKK',
-    'AED',
-    'INR',
-    'KZT',
-    'CAD',
-    'KGS',
-    'CNY',
-    'MDL',
-    'RON',
-    'TMT',
-    'NOK',
-    'PLN',
-    'RUB',
-    'SGD',
-    'TJS',
-    'TRY',
-    'UZS',
-    'UAH',
-    'GBP',
-    'CZK',
-    'SEK',
-    'CHF',
-    'ZAR',
-    'JPY'
-        ]
-
-currency_dict = dict(zip(values, numbers))
 
 bot.polling(none_stop=True)
