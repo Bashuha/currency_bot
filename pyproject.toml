@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "currency-bot"
+version = "0.1.0"
+description = ""
+authors = ["Ilia Boyarsky <boyailya@gmail.com>"]
+readme = "README.md"
+packages = [{include = "currency_bot"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+selenium = "^4.10.0"
+telebot = "^0.0.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
